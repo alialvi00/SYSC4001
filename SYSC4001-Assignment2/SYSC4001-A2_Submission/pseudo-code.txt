@@ -1,0 +1,94 @@
+﻿/* SYSC 4001 Assignment 2
+ *
+ * Muhammad Tarequzzaman 100954008
+ * Caleb Gryfe		101009798
+ *
+ */
+
+	/*Initializing variable */
+	int semSet_id, shmAddr
+	
+	/* Initializing Semaphore*/
+	
+	semSet_id = semget();  // setup semaphore set id.
+	rc = semctl(semSet_id);  // setup semaphore control with semSet_id. 
+	
+	/*Initializing shared memory*/
+	
+	shmid = shmget(key, shmSize, IPC_CREAT); // shared memory id created
+	
+	shmAddr = shmmat(shmid); // shared memory address created.
+	
+	/* Initializing shared memory array */
+	
+	array = shmAddr+ sizeof(int); // connecting Array with shared memory address 
+	
+	/*Ask user to debug mood on / off */
+	
+	if: debug mood ON 
+		run program as debug mode  
+	else :
+		run program as user mode
+	
+	// end if-else
+	
+	/*Ask user for input*/
+	
+	array <= input; 
+	
+	/*Create  Fork process / child process */
+	while (fork size < Array_Size):// if Array size is 5, $ process create.
+		create pid <= fork();
+		if : fork in the fork creation loop:
+			break;
+	// end while 
+	
+	/*Start the sorting algorithm */
+	
+	switch (pid)
+	case: -1 // fork did not created 
+		perror msg print	
+	
+	case: 0 // Child process running 
+		
+		do{	child++; // how many child enter in the process 
+			// Sort two elements with one process and Communicate for mutual execution using semaphore;  
+			
+	 		p1Sort(Semaphore_ set ID , Array);//sort position Array[0] and Array[1]
+			p2Sort(Semaphore_ set ID , Array);//sort position Array[1] and Array[2]
+			p3Sort(Semaphore_ set ID , Array);//sort position Array[2] and Array[3]
+			p4Sort(Semaphore_ set ID , Array);//sort position Array[3] and Array[4]
+			
+			child--; // how many child still in the process
+			
+		}while (Whole Array is not descending order )
+	
+		break;// child process ends
+		default: // parents process running
+			wait(&pid); //wait until all process finished 	
+			if: there is no child running the sorting algorithm:
+				// Output Sorted Algorithm create a final product
+				
+				sortArrayOutput(Array, Final, Size of the array); 
+			// end if
+			break;// end of Parent process 
+	
+	// end switch-case  
+		
+	
+	
+	/*De-Allocate and Delete Shared memory segment */	
+		shmdt(Array);
+		shmctl(shmId, IPC_RMID. NULL);
+	
+	return(0); // end of the main Program  
+
+
+pXSort(){ //X = 1, 2, 3, 4 :  
+	semLock(); // semaphore lock
+	if: Array[i]<Array[i +1] :
+		sort array Descending order 
+	sem_unlock(); //semaphore unlock
+	
+}
+

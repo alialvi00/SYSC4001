@@ -1,0 +1,65 @@
+﻿/* SYSC 4001 Assignment 2
+ *
+ * Muhammad Tarequzzaman 100954008
+ * Caleb Gryfe		101009798
+ *
+ */
+
+/*Discussion of all test results:*/
+
+/*After entering Debug mode selection and  5 element,
+* program creates 4 process, and execute
+* piSort(Semaphore_ID, Array, Debug Mode), where i = 1, 2, 3,4 ,
+* one of the four process carry on mutual execution while its not unlock by another
+* process that are running 1 of 4 PxSort function. Once algorithm make sure no
+* process running in the child and Array have been sorted Descending order,
+* parent process output the sorted array and pass it to a non-shared memory array 
+* for final extraction (which s not implemented due to not present in requirement document)
+*/
+/*Down bellow is the Test Case and result*/
+
+——————————————————————————————
+Test 1: 5, 6, 8, 2, 7
+——————————————————————————————
+$ cd desktop/SYSC4001-A2_Submission/
+$ gcc STATS.c -o STATS
+$ ./STATS
+
+Would you like to run in Debug Mode? Enter y for yes, otherwise enter any Key
+n
+Debug is off
+Please enter 5 distinct integers (Format: Press Key, Press Enter):
+5
+6
+8
+2
+7
+You have Entered: 5, 6, 8, 2, 7
+
+The Array is now Sorted in Decreasing Value and Contains:
+ 8  7  6  5  2
+
+The Minimum Value is: 2
+The Maximum Value is: 8
+The Median Value is: 6
+————————————————————————————————————————————————————————
+Test 2: 10 ,9, 11, 5, 7
+————————————————————————————————————————————————————————
+Calebs-Device:SYSC4001-A2_Submission calebgryfe$ ./STATS
+Would you like to run in Debug Mode? Enter y for yes, otherwise enter any Key
+n
+Debug is off
+Please enter 5 distinct integers (Format: Press Key, Press Enter):
+10
+9
+11
+5
+7
+You have Entered: 10, 9, 11, 5, 7
+
+The Array is now Sorted in Decreasing Value and Contains:
+ 11  10  9  7  5
+
+The Minimum Value is: 5
+The Maximum Value is: 11
+The Median Value is: 9
