@@ -1,0 +1,209 @@
+/* SYSC 4001 Assignment 3	Test Results
+ *
+ * Muhammad Tarequzzaman 100954008
+ * Caleb Gryfe		101009798
+ *
+ */
+—— Administrator Terminal ——
+/**************************************************************/
+ Test 1: Inserting User
+/**************************************************************/
+
+Calebs-Device:Assignment3 calebgryfe$ gcc Administrator.c -o Admin
+Calebs-Device:Assignment3 calebgryfe$ ./Admin 
+1. Insert
+2. Check Name
+3. Check Department
+4. Check Salary
+5. Check Employee Number
+6. Check
+7. Delete
+Please Enter a Number corresponding to one of the options above: 1
+Case 1: Insert
+Enter the Employee Name: Name1
+Enter the Department Name: Dep1
+Enter the Employee Number: 3
+Enter the Salary: 12345
+ send data: 1,3,Name1,Dep1,12345/ 
+get : Add on Record # :0 ,Name:TEST1, Dep:Carleton, E-NUM :1, Salary: 100 
+1. Insert
+2. Check Name
+3. Check Department
+4. Check Salary
+5. Check Employee Number
+6. Check
+7. Delete
+Please Enter a Number corresponding to one of the options above: 
+
+/**************************************************************/
+ Test 2: Check Name of User
+/**************************************************************/
+
+Please Enter a Number corresponding to one of the options above: 2
+Case 2: Check Name
+Enter the Employee Number: 1
+ send data: 2,1,0,0,0/ 
+get : Name: Name:TEST1 
+1. Insert
+2. Check Name
+3. Check Department
+4. Check Salary
+5. Check Employee Number
+6. Check
+7. Delete
+Please Enter a Number corresponding to one of the options above:
+
+/**************************************************************/
+ Test 3: Check Department
+/**************************************************************/
+
+Please Enter a Number corresponding to one of the options above: 3
+Case 3: Check Depatment
+Enter the Employee Number: 1
+ send data: 3,1,0,0,0/ 
+get : Name: Name:Carleton 
+
+/**************************************************************/
+ Test 4: Check Salary
+/**************************************************************/
+
+1. Insert
+2. Check Name
+3. Check Department
+4. Check Salary
+5. Check Employee Number
+6. Check
+7. Delete
+Please Enter a Number corresponding to one of the options above: 4
+Case 4: Check Salary
+Enter the Employee Number: 1
+ send data: 4,1,0,0,0/ 
+get : Name: Name:100 
+
+/**************************************************************/
+ Test 5: Check Employee Number
+/**************************************************************/
+
+1. Insert
+2. Check Name
+3. Check Department
+4. Check Salary
+5. Check Employee Number
+6. Check
+7. Delete
+Please Enter a Number corresponding to one of the options above: 5
+Case 5: Check Employee Number
+Enter the Employee Name: TEST1
+ send data: 5,0,TEST1,0,0/
+get : Name: Name:1
+
+/**************************************************************/
+ Test 6: Check *Not recieving
+/**************************************************************/
+
+1. Insert
+2. Check Name
+3. Check Department
+4. Check Salary
+5. Check Employee Number
+6. Check
+7. Delete
+Please Enter a Number corresponding to one of the options above: 6
+Case 6: Check
+Enter the Department Name: Carleton
+ send data: 6,0,0,Carleton,0/
+
+/**************************************************************/
+ Test 7: Delete * Does not receive data back
+/**************************************************************/
+
+1. Insert
+2. Check Name
+3. Check Department
+4. Check Salary
+5. Check Employee Number
+6. Check
+7. Delete
+Please Enter a Number corresponding to one of the options above: 7
+Case 7: Delete Employee
+Enter the Employee Number: 1
+ send data: 7,1,0,0,0/ 
+
+
+—— RecordKeeper Terminal ——
+
+/**************************************************************/
+ Test 1: Inserting User
+/**************************************************************/
+
+Calebs-Device:~ calebgryfe$ cd /Users/calebgryfe/Documents/UNI/Year\ 4/Semester\ 2/SYSC\ 4001/AssignmentsOnGit/SYSC4001/Assignment3
+Calebs-Device:Assignment3 calebgryfe$ gcc RecordKeeper.c -o Record
+Calebs-Device:Assignment3 calebgryfe$ ./Record 
+Ready to Recieve Data
+Case 1: Insert
+size of records 3 
+Ready to Recieve Data
+Case 1: Insert
+size of records 4 
+Ready to Recieve Data
+Case 1: Insert
+size of records 4 
+Ready to Recieve Data
+
+/**************************************************************/
+ Test 2: Check Name of User
+/**************************************************************/
+
+Ready to Recieve Data
+Case 2: CheckName
+Ready to Recieve Data
+
+/**************************************************************/
+ Test 3: Check Department
+/**************************************************************/
+
+Ready to Recieve Data
+Case 3: CheckDepatment
+Case 3: CheckDepatment
+
+/**************************************************************/
+ Test 4: Check Salary
+/**************************************************************/
+
+Ready to Recieve Data
+Case 4: Check Salary
+Case 4: Check Salary
+Case 4: Check Salary
+
+/**************************************************************/
+ Test 5: Check Employee Number
+/**************************************************************/
+
+Ready to Recieve Data
+Case 5: Check Employee Number
+Case 5: Check Employee Number
+Case 5: Check Employee Number
+
+/**************************************************************/
+ Test 6: Check 
+/**************************************************************/
+
+Ready to Recieve Data
+Case 6: Check Employee Number by Department 
+Case 6: Check Employee Number by Department 
+Case 6: Check Employee Number by Department 
+Case 6: Check Employee Number by Department 
+
+/**************************************************************/
+ Test 7: Delete
+/**************************************************************/
+
+Ready to Recieve Data
+Case 7: Delete Employee
+Ready to Recieve Data
+
+
+
+
+
+

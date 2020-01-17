@@ -1,0 +1,20 @@
+create msgQueue for recive and send data.
+
+Ask user for what kind of input prefer,
+if user chose to exit , exit the system. 
+
+get the choice prefer and go to swithc of that case;
+
+loop untill user choose to exit:{
+
+Ask user for  command  again, and send the data to Record Keeper.
+wait for response from recorde keeper.
+get the data and display. 
+}
+
+delete msgQueue.
+ exit program.
+
+
+
+

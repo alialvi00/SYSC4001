@@ -1,0 +1,134 @@
+Structure named msg_buf
+  Contains message type & Message Data
+
+Structure named Record
+  Contains name,index,departmentName,employeeNum,salary
+
+main{
+  Populate Record Structure{
+    Employee information 1
+    Employee information 2
+    Employee information 3
+  }
+
+  do the following{
+    Chooses a User entered number
+
+      If number is 1:
+        if the record is contained in our record set
+          assign temporary values for index
+
+        Iterate through records to send all record data stored in that indexes
+          send message with previously found Data
+
+      If number is 2:
+        Iterate through the data received
+          Find the end of data denoted by a '/'
+            quit if found
+          find the commas in the data for indexing purposes
+            Add to count
+          find index after first commas
+            collect data in range
+
+          Convert string of collected data into integer
+
+          Iterate through Records
+            Find Employee number to match with input Number
+              Store data into a String
+              Send Data
+
+      If number is 3:
+        Iterate through the data received
+          Find the end of data denoted by a '/'
+            quit if found
+          find the commas in the data for indexing purposes
+            Add to count
+          find index after first commas
+            collect data in range
+
+          Convert string of collected data into integer
+
+          Iterate through Records
+            Find Employee number to match with input Number
+              Store data into a String
+              Send Data
+
+      If number is 4:
+        Iterate through the data received
+          Find the end of data denoted by a '/'
+            quit if found
+          find the commas in the data for indexing purposes
+            Add to count
+          find index after first commas
+            collect data in range
+
+          Convert string of collected data into integer
+
+          Iterate through Records
+            Find Employee number to match with input Number
+
+              Send Data
+
+      If number is 5:
+        Iterate through the data received
+          Find the end of data denoted by a '/'
+            quit if found
+          find the commas in the data for indexing purposes
+            Add to count
+          find index after first commas
+            collect data in range
+
+          Iterate through Records
+            Find Employee number to match with input Number
+
+              Send Data
+
+        If number is 6:
+          Iterate through Records
+            Find Department name to match with input departmentName
+              contain data in a neat package
+              Send Data
+
+        if number is 7:
+        Iterate through Records
+          Find Employee Number to match with input Number
+            Save last index
+            Find index to be removed
+            Move indexes
+            Remove 1 from the size
+
+        Default case to evaluate at any other input:
+          Receive message from queue
+          Convert string to integer from received message for choices above
+
+          Iterate through the data received
+            Find the end of data denoted by a '/'
+              quit if found
+            find the commas in the data for indexing purposes
+              Add to count
+            find index after first commas
+              collect data in range
+            find index after second commas
+              collect data in range
+            find index after third commas
+              collect data in range
+            find index after fourth commas
+              collect data in range
+
+            convert string to int for Employee Number
+            convert string to int for Salary
+
+            empty the msgData variable to act as a debounce of sorts
+  }
+}
+
+Add Item{
+  Dynamically increase the size of the array dependent on if user needs more space
+}
+
+Delete Item{
+  If records are not empty
+    Shift indexes
+      Remove unwanted index ie. delete user
+
+}
